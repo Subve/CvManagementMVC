@@ -9,11 +9,11 @@ namespace CvManagementMVC.Domain.Model
     public class EducationHistory
     {
         public int Id { get; set; }
-        public int CandidateId { get; set; }
+        public int CvId { get; set; }
         public string NameOfSchool { get; set; }
         public string DegreeEarned { get; set; }
         public DateTime EducationBegin { get; set; }
         public DateTime EducationEnd { get; set; }
-        public virtual Candidate Candidate { get; set; }
+        public virtual Cv Cv { get; set; }
     }
 }

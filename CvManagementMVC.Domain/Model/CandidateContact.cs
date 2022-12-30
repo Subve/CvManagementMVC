@@ -12,6 +12,6 @@ namespace CvManagementMVC.Domain.Model
         public int CandidateId { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public virtual Candidate Candidate { get; set; }
+        public  Candidate Candidate { get; set; }
     }
 }
