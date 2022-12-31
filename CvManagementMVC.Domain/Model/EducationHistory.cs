@@ -10,7 +10,7 @@ namespace CvManagementMVC.Domain.Model
     {
         public int Id { get; set; }
         public int CvId { get; set; }
-        public string NameOfSchool { get; set; }
+        public string SchoolName { get; set; }
         public string DegreeEarned { get; set; }
         public DateTime EducationBegin { get; set; }
         public DateTime EducationEnd { get; set; }
