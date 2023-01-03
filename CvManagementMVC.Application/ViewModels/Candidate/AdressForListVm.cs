@@ -8,6 +8,7 @@ namespace CvManagementMVC.Application.ViewModels.Candidate
 {
     public class AdressForListVm
     {
+        public int Id { get; set; }
         public string City { get; set; }
         public string Region { get; set; }
         public string PostalCode { get; set; }

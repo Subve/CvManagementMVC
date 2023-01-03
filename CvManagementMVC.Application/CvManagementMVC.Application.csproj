@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
     <Folder Include="ViewModels\Cv\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CvManagementMVC.Domain\CvManagementMVC.Domain.csproj" />
+    <ProjectReference Include="..\CvManagementMVC.Infrastructure\CvManagementMVC.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

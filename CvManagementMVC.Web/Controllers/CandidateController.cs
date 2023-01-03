@@ -1,10 +1,13 @@
-﻿using CvManagementMVC.Domain.Model;
+﻿using CvManagementMVC.Application.Services;
+using CvManagementMVC.Application.ViewModels.Candidate;
+using CvManagementMVC.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CvManagementMVC.Web.Controllers
 {
     public class CandidateController : Controller
     {
+        private readonly CandidateService _candidateService;
         public IActionResult Index()
         {
             //utworzyc widok dla tej akcji
@@ -14,7 +17,7 @@ namespace CvManagementMVC.Web.Controllers
             //przekazanie filtrow do serwisu
             //serwis musi przygotowac
             //serwis musi zwrocic dane
-            var model = candidateService.GetAllCandidatesForList();
+            var model = _candidateService.GetAllCandidatesForList();
             return View();
         }
         [HttpGet]
@@ -23,14 +26,14 @@ namespace CvManagementMVC.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddCandidate(Candidate model)
+        public IActionResult AddCandidate(NewCandidateVm model)
         {
-            var id=customerService.AddCandidate(model);
+            var id= _candidateService.AddCandidate(model);
             return View();
         }
         public IActionResult ViewCandidate(int candidateId)
         {
-            var candidateModel = candidateModel.GetCandidate(candidateId);
+            var candidateModel = _candidateService.GetCandidateDetails(candidateId);
             return View(candidateModel);
         }
     }

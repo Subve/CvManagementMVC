@@ -39,5 +39,11 @@ namespace CvManagementMVC.Infrastructure.Repositories
         {
             return _context.Candidates;
         }
+
+        public IQueryable<Candidate> GetAllActiveCandidates()
+        {//Need to add the active flag bool
+            var candidates=_context.Candidates.Where(p=>p.isActive==true);
+            return candidates;
+        }
     }
 }

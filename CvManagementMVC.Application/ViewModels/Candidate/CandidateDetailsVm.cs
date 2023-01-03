@@ -13,9 +13,9 @@ namespace CvManagementMVC.Application.ViewModels.Candidate
         public string FullName { get; set; }
         public string Nationality { get; set; }
         public int Age { get; set; }
-        public List<AdressForListVm> Adresses { get; set; }
-        public List<ContactDetailListVm> Emails { get; set; }
-        public List<ContactDetailListVm> PhoneNumbers { get; set; }
+        public AdressForListVm Adress { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
 
     }
 }
