@@ -1,6 +1,8 @@
-﻿using CvManagementMVC.Application.Interfaces;
+﻿using AutoMapper;
+using CvManagementMVC.Application.Interfaces;
 using CvManagementMVC.Application.Services;
 using CvManagementMVC.Domain.Interfaces;
+using CvManagementMVC.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ namespace CvManagementMVC.Application
     {
         public static IServiceCollection AddAplication(this IServiceCollection services)
         {
-            services.AddTransient<ICandidateService, CandidateService>();
+            services.AddTransient<ICandidateService,CandidateService> ();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }

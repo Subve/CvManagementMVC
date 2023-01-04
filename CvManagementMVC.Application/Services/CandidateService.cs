@@ -15,9 +15,13 @@ namespace CvManagementMVC.Application.Services
 {
     public class CandidateService : ICandidateService
     {
-        private readonly CandidateRepository _candidateRepository;
+        private readonly ICandidateRepository _candidateRepository;
         private readonly IMapper _mapper;
-        public CandidateService(CandidateRepository candidateRepository, IMapper mapper)
+        /*public CandidateService()
+        {
+
+        }*/
+        public CandidateService(ICandidateRepository candidateRepository, IMapper mapper)
         {
             _candidateRepository = candidateRepository;
             _mapper = mapper;

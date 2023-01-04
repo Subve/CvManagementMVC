@@ -1,4 +1,5 @@
-﻿using CvManagementMVC.Application.Services;
+﻿using CvManagementMVC.Application.Interfaces;
+using CvManagementMVC.Application.Services;
 using CvManagementMVC.Application.ViewModels.Candidate;
 using CvManagementMVC.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -7,8 +8,8 @@ namespace CvManagementMVC.Web.Controllers
 {
     public class CandidateController : Controller
     {
-        private readonly CandidateService _candidateService;
-        public CandidateController(CandidateService candidateService)
+        private readonly ICandidateService _candidateService;
+        public CandidateController(ICandidateService candidateService)
         {
             _candidateService= candidateService;
         }

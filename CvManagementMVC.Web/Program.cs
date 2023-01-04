@@ -20,8 +20,9 @@ namespace CvManagementMVC.Web
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<Context>();
-            builder.Services.AddAplication();
             builder.Services.AddInfrastructure();
+            builder.Services.AddAplication();
+            
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

@@ -24,7 +24,7 @@ namespace CvManagementMVC.Application.ViewModels.Candidate
                 .ForMember(s => s.FullName, opt => opt.MapFrom(d => d.FirstName + " " + d.LastName))
                 .ForMember(s => s.Adress, opt => opt.Ignore())
                 .ForMember(s => s.Email, opt => opt.Ignore())
-                .ForMember(s=>PhoneNumber, opt => opt.Ignore());
+                .ForMember(s=>s.PhoneNumber, opt => opt.Ignore());
 
         }
 

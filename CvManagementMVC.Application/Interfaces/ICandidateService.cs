@@ -1,5 +1,7 @@
-﻿using CvManagementMVC.Application.ViewModels.Candidate;
+﻿using AutoMapper;
+using CvManagementMVC.Application.ViewModels.Candidate;
 using CvManagementMVC.Domain.Model;
+using CvManagementMVC.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace CvManagementMVC.Application.Interfaces
 {
     public interface ICandidateService
     {
+        
         ListCandidateForListVm GetAllCandidatesForList();
         int AddCandidate(NewCandidateVm candidate);
         CandidateDetailsVm GetCandidateDetails(int candidateId);
