@@ -17,11 +17,8 @@ namespace CvManagementMVC.Application.ViewModels.Candidate
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CvManagementMVC.Domain.Model.Candidate, CandidateForListVm>()
-                .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
-                .ForMember(d => d.FirstName, opt => opt.MapFrom(s => s.FirstName))
-                .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.LastName))
-                .ForMember(d => d.isActive, opt => opt.MapFrom(s => s.isActive));
+            profile.CreateMap<CvManagementMVC.Domain.Model.Candidate, CandidateForListVm>();
+                
         }
 
     }

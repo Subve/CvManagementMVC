@@ -1,4 +1,6 @@
-﻿using CvManagementMVC.Application.Interfaces;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using CvManagementMVC.Application.Interfaces;
 using CvManagementMVC.Application.ViewModels.Candidate;
 using CvManagementMVC.Domain.Interfaces;
 using CvManagementMVC.Infrastructure.Repositories;
@@ -14,6 +16,13 @@ namespace CvManagementMVC.Application.Services
     public class CandidateService : ICandidateService
     {
         private readonly CandidateRepository _candidateRepository;
+        private readonly IMapper _mapper;
+        public CandidateService(CandidateRepository candidateRepository, IMapper mapper)
+        {
+            _candidateRepository = candidateRepository;
+            _mapper = mapper;
+        }
+
         public int AddCandidate(NewCandidateVm candidate)
         {
             return 1;
@@ -21,27 +30,24 @@ namespace CvManagementMVC.Application.Services
 
         public ListCandidateForListVm GetAllCandidatesForList()
         {
-            var candidates = _candidateRepository.GetAllActiveCandidates();
-            ListCandidateForListVm result = new ListCandidateForListVm();
-            result.Candidates = new List<CandidateForListVm>();
-            foreach (var candidate in candidates)
+            var candidates = _candidateRepository.GetAllActiveCandidates().ProjectTo<CandidateForListVm>(_mapper.ConfigurationProvider).ToList();
+            var candidatesList = new ListCandidateForListVm()
             {
-                var custVm = new CandidateForListVm()
-                {
-                    Id = candidate.Id,
-                    FirstName = candidate.FirstName,
-                    LastName = candidate.LastName
-                };
-                result.Candidates.Add(custVm);
-            }
-            result.Count = result.Candidates.Count;
-            return result;
+                Candidates = candidates,
+                Count = candidates.Count
+            };
+
+
+            
+            return candidatesList;
         }
 
         public CandidateDetailsVm GetCandidateDetails(int candidateId)
         {
             var candidate = _candidateRepository.GetCandidate(candidateId);
-            var candidateVm = new CandidateDetailsVm();
+            var candidateVm=_mapper.Map<CandidateDetailsVm>(candidate);
+           /* var candidateVm = new CandidateDetailsVm();
+
             candidateVm.Id= candidate.Id;
             candidateVm.FullName= candidate.FirstName + " "+candidate.LastName;
             candidateVm.Age=candidate.Age;
@@ -56,7 +62,7 @@ namespace CvManagementMVC.Application.Services
                 PostalCode = candidate.CandidateAdress.PostalCode,
                 Region = candidate.CandidateAdress.Region
             };
-            candidateVm.Adress= adress;
+            candidateVm.Adress= adress;*/
             return candidateVm;
             
         }

@@ -8,6 +8,10 @@ namespace CvManagementMVC.Web.Controllers
     public class CandidateController : Controller
     {
         private readonly CandidateService _candidateService;
+        public CandidateController(CandidateService candidateService)
+        {
+            _candidateService= candidateService;
+        }
         public IActionResult Index()
         {
             //utworzyc widok dla tej akcji
@@ -18,7 +22,7 @@ namespace CvManagementMVC.Web.Controllers
             //serwis musi przygotowac
             //serwis musi zwrocic dane
             var model = _candidateService.GetAllCandidatesForList();
-            return View();
+            return View(model);
         }
         [HttpGet]
         public IActionResult AddCandidate()

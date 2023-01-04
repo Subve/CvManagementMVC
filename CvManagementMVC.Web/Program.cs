@@ -1,3 +1,4 @@
+using CvManagementMVC.Application;
 using CvManagementMVC.Infrastructure;
 
 using Microsoft.AspNetCore.Identity;
@@ -19,6 +20,8 @@ namespace CvManagementMVC.Web
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<Context>();
+            builder.Services.AddAplication();
+            builder.Services.AddInfrastructure();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
