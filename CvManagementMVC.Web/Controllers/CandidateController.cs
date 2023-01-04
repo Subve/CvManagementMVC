@@ -36,6 +36,8 @@ namespace CvManagementMVC.Web.Controllers
             var id= _candidateService.AddCandidate(model);
             return View();
         }
+        [HttpGet]
+        [Route("Candidate/ViewCandidate/{candidateId}")]
         public IActionResult ViewCandidate(int candidateId)
         {
             var candidateModel = _candidateService.GetCandidateDetails(candidateId);
