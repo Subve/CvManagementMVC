@@ -28,13 +28,13 @@ namespace CvManagementMVC.Web.Controllers
         [HttpGet]
         public IActionResult AddCandidate()
         {
-            return View();
+            return View(new NewCandidateVm());
         }
         [HttpPost]
         public IActionResult AddCandidate(NewCandidateVm model)
         {
             var id= _candidateService.AddCandidate(model);
-            return View();
+            return RedirectToAction("Index");
         }
         [HttpGet]
         [Route("Candidate/ViewCandidate/{candidateId}")]
@@ -42,6 +42,13 @@ namespace CvManagementMVC.Web.Controllers
         {
             var candidateModel = _candidateService.GetCandidateDetails(candidateId);
             return View(candidateModel);
+        }
+        [HttpGet]
+        [Route("Candidate/Delete/{candidateId}")]
+        public IActionResult Delete(int candidateId)
+        {
+            _candidateService.RemoveCandidate(candidateId);
+            return RedirectToAction("Index");
         }
     }
 }

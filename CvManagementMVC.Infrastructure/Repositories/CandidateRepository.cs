@@ -45,5 +45,14 @@ namespace CvManagementMVC.Infrastructure.Repositories
             var candidates=_context.Candidates.Where(p=>p.isActive);
             return candidates;
         }
+        public void RemoveCandidate(int id)
+        {
+            var candidate = _context.Candidates.Find(id);
+            if(candidate!=null)
+            {
+                _context.Candidates.Remove(candidate);
+                _context.SaveChanges();
+            }
+        }
     }
 }

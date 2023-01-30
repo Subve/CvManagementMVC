@@ -17,7 +17,7 @@ namespace CvManagementMVC.Application.ViewModels.Candidate
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CvManagementMVC.Domain.Model.Candidate, CandidateForListVm>();
+            profile.CreateMap<CvManagementMVC.Domain.Model.Candidate, CandidateForListVm>().ReverseMap();
                 
         }
 

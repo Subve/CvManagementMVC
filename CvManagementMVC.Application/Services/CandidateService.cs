@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using CvManagementMVC.Application.Interfaces;
 using CvManagementMVC.Application.ViewModels.Candidate;
 using CvManagementMVC.Domain.Interfaces;
+using CvManagementMVC.Domain.Model;
 using CvManagementMVC.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,9 @@ namespace CvManagementMVC.Application.Services
 
         public int AddCandidate(NewCandidateVm candidate)
         {
-            return 1;
+            var cust = _mapper.Map<Candidate>(candidate);
+            var id= _candidateRepository.AddCandidate(cust);
+            return id;
         }
 
         public ListCandidateForListVm GetAllCandidatesForList()
@@ -69,6 +72,11 @@ namespace CvManagementMVC.Application.Services
             candidateVm.Adress= adress;*/
             return candidateVm;
             
+        }
+
+        public void RemoveCandidate(int candidateId)
+        {
+            _candidateRepository.DeleteCandidate(candidateId);
         }
     }
 }
