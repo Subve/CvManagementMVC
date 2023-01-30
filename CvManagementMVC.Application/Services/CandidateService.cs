@@ -74,9 +74,22 @@ namespace CvManagementMVC.Application.Services
             
         }
 
+        public NewCandidateVm GetCandidateForEdit(int id)
+        {
+            var candidate=_candidateRepository.GetCandidate(id);
+            var candidateVm = _mapper.Map<NewCandidateVm>(candidate);
+            return candidateVm;
+        }
+
         public void RemoveCandidate(int candidateId)
         {
             _candidateRepository.DeleteCandidate(candidateId);
+        }
+
+        public void UpdateCandidate(NewCandidateVm model)
+        {
+            var candidate = _mapper.Map<Candidate>(model);
+            _candidateRepository.UpdateCandidate(candidate);
         }
     }
 }

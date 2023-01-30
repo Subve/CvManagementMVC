@@ -18,5 +18,7 @@ namespace CvManagementMVC.Application.Interfaces
         int AddCandidate(NewCandidateVm candidate);
         CandidateDetailsVm GetCandidateDetails(int candidateId);
         void RemoveCandidate(int candidateId);
+        NewCandidateVm GetCandidateForEdit(int id);
+        void UpdateCandidate(NewCandidateVm model);
     }
 }

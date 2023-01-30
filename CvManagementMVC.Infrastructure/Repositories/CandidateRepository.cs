@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace CvManagementMVC.Infrastructure.Repositories
 {
@@ -53,6 +54,17 @@ namespace CvManagementMVC.Infrastructure.Repositories
                 _context.Candidates.Remove(candidate);
                 _context.SaveChanges();
             }
+        }
+
+        public void UpdateCandidate(Candidate candidate)
+        {
+            _context.Attach(candidate);
+            _context.Entry(candidate).Property("FirstName").IsModified = true;
+            _context.Entry(candidate).Property("LastName").IsModified = true;
+            _context.Entry(candidate).Property("Nationality").IsModified = true;
+            _context.Entry(candidate).Property("Age").IsModified = true;
+            _context.Entry(candidate).Property("isActive").IsModified = true;
+            _context.SaveChanges();
         }
     }
 }

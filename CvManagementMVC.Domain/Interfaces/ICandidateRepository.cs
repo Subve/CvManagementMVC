@@ -20,5 +20,6 @@ namespace CvManagementMVC.Domain.Interfaces
 
          IQueryable<Candidate> GetAllCandidates();
          IQueryable<Candidate> GetAllActiveCandidates();
+        void UpdateCandidate(Candidate candidate);
     }
 }

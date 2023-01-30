@@ -33,8 +33,11 @@ namespace CvManagementMVC.Web.Controllers
         [HttpPost]
         public IActionResult AddCandidate(NewCandidateVm model)
         {
-            var id= _candidateService.AddCandidate(model);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            { var id = _candidateService.AddCandidate(model);
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
         [HttpGet]
         [Route("Candidate/ViewCandidate/{candidateId}")]
@@ -49,6 +52,22 @@ namespace CvManagementMVC.Web.Controllers
         {
             _candidateService.RemoveCandidate(candidateId);
             return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult EditCandidate(int id)
+        {
+            var candidate=_candidateService.GetCandidateForEdit(id);
+            return View(candidate);
+        }
+        [HttpPost]
+        public IActionResult EditCandidate(NewCandidateVm model)
+        {
+            if (ModelState.IsValid)
+            {
+                _candidateService.UpdateCandidate(model);
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
     }
 }

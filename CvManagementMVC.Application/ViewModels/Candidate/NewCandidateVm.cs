@@ -18,7 +18,7 @@ namespace CvManagementMVC.Application.ViewModels.Candidate
         public bool isActive { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<NewCandidateVm, CvManagementMVC.Domain.Model.Candidate>();
+            profile.CreateMap<NewCandidateVm, CvManagementMVC.Domain.Model.Candidate>().ReverseMap();
 
         }
     }
