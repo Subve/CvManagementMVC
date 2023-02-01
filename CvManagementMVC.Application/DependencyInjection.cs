@@ -18,6 +18,7 @@ namespace CvManagementMVC.Application
         public static IServiceCollection AddAplication(this IServiceCollection services)
         {
             services.AddTransient<ICandidateService,CandidateService> ();
+            services.AddTransient<ICandidateAdressService,AdressService> ();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }

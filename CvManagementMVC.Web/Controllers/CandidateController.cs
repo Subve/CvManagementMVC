@@ -40,17 +40,17 @@ namespace CvManagementMVC.Web.Controllers
             return View(model);
         }
         [HttpGet]
-        [Route("Candidate/ViewCandidate/{candidateId}")]
-        public IActionResult ViewCandidate(int candidateId)
+        //[Route("Candidate/ViewCandidate/{candidateId}")]
+        public IActionResult ViewCandidate(int id)
         {
-            var candidateModel = _candidateService.GetCandidateDetails(candidateId);
+            var candidateModel = _candidateService.GetCandidateDetails(id);
             return View(candidateModel);
         }
         [HttpGet]
-        [Route("Candidate/Delete/{candidateId}")]
-        public IActionResult Delete(int candidateId)
+        //[Route("Candidate/Delete/{candidateId}")]
+        public IActionResult Delete(int id)
         {
-            _candidateService.RemoveCandidate(candidateId);
+            _candidateService.RemoveCandidate(id);
             return RedirectToAction("Index");
         }
         [HttpGet]

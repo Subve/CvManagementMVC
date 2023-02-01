@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CvManagementMVC.Application.Mapping;
+using CvManagementMVC.Application.ViewModels.Adress;
 using CvManagementMVC.Domain.Model;
 using System;
 using System.Collections.Generic;

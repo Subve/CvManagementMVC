@@ -15,7 +15,7 @@ namespace CvManagementMVC.Infrastructure.Repositories
         {
             _context= context;
         }
-        public int AddCandidateAdress(CandidateAdress candidateAdress)
+        public int AddCandidateAdress(Adress candidateAdress)
         {
             _context.CandidateAdresses.Add(candidateAdress);
             _context.SaveChanges();
@@ -31,17 +31,17 @@ namespace CvManagementMVC.Infrastructure.Repositories
             }
             _context.SaveChanges();
         }
-        public CandidateAdress GetCandidateAdressById(int candidateAdressId)
+        public Adress GetCandidateAdressById(int candidateAdressId)
         {
             var adress = _context.CandidateAdresses.Find(candidateAdressId);
             return adress;
         }
-        public IQueryable<CandidateAdress> GetAllAdressesByCountry(string country)
+        public IQueryable<Adress> GetAllAdressesByCountry(string country)
         {
             var adresses = _context.CandidateAdresses.Where(x => x.Country == country);
             return adresses;
         }
-        public IQueryable<CandidateAdress> GetAllAdressesByCity(string city) 
+        public IQueryable<Adress> GetAllAdressesByCity(string city) 
         { 
             var adresses=_context.CandidateAdresses.Where(x => x.City == city);
             return adresses;
