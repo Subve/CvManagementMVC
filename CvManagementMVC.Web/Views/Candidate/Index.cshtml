@@ -37,10 +37,12 @@
                 @Html.DisplayFor(modelItem=>item.LastName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+                    @Html.ActionLink("Edit", "EditCandidate", new {  id=item.Id  }) |
                     @Html.ActionLink("Details", "ViewCandidate", new { id=item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
+                    <a href="@Url.Action("AddAdress", "Adress", new { id=item.Id })" class="btn btn-default">
+                        Add adress
+                    </a>
         </tr>
 }
     </tbody>

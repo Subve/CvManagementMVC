@@ -13,7 +13,7 @@ namespace CvManagementMVC.Infrastructure
     {
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Cv> Cvs { get; set; }
-        public DbSet<CandidateAdress> CandidateAdresses { get; set; }
+        public DbSet<Adress> CandidateAdresses { get; set; }
         public DbSet<CandidateContact> CandidateContacts { get; set; }
         public DbSet<EducationHistory> EducationHistories { get; set; }
         public DbSet<EmploymentHistory> EmploymentHistories { get; set; }
@@ -35,8 +35,8 @@ namespace CvManagementMVC.Infrastructure
                 .HasMany(a => a.EmploymentHistory).WithOne(b => b.Cv).HasForeignKey(c => c.CvId);
             builder.Entity<CandidateContact>()
                 .HasOne(a => a.Candidate).WithOne(b => b.CandidateContact).HasForeignKey<CandidateContact>(c => c.CandidateId);
-            builder.Entity<CandidateAdress>()
-                .HasOne(a => a.Candidate).WithOne(b => b.CandidateAdress).HasForeignKey<CandidateAdress>(c => c.CandidateId);
+            builder.Entity<Adress>()
+                .HasOne(a => a.Candidate).WithOne(b => b.CandidateAdress).HasForeignKey<Adress>(c => c.CandidateId);
 
         }
     }

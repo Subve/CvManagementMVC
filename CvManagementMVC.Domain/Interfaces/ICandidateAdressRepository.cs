@@ -9,18 +9,18 @@ namespace CvManagementMVC.Domain.Interfaces
 {
     public interface ICandidateAdressRepository
     {
-        int AddCandidateAdress(CandidateAdress candidateAdress);
+        int AddCandidateAdress(Adress candidateAdress);
 
          void DeleteCandidateAdress(int candidateAdressId);
 
 
-         CandidateAdress GetCandidateAdressById(int candidateAdressId);
+         Adress GetCandidateAdressById(int candidateAdressId);
 
 
-         IQueryable<CandidateAdress> GetAllAdressesByCountry(string country);
+         IQueryable<Adress> GetAllAdressesByCountry(string country);
 
 
-         IQueryable<CandidateAdress> GetAllAdressesByCity(string city);
+         IQueryable<Adress> GetAllAdressesByCity(string city);
         
     }
 }
