@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CvManagementMVC.Application.ViewModels.Adress
+namespace CvManagementMVC.Application.ViewModels.Address
 {
-    public class NewAdressVm : IMapFrom<CvManagementMVC.Domain.Model.Adress>
+    public class NewAddressVm : IMapFrom<CvManagementMVC.Domain.Model.Address>
     {
         public int Id { get; set; }
         public int CandidateId { get; set; }
@@ -20,7 +20,7 @@ namespace CvManagementMVC.Application.ViewModels.Adress
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<NewAdressVm, Domain.Model.Adress>();
+            profile.CreateMap<NewAddressVm, Domain.Model.Address>();
         }
         
     }

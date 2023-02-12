@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CvManagementMVC.Application.ViewModels.Adress
+namespace CvManagementMVC.Application.ViewModels.Address
 {
-    public class AdressForListVm
+    public class AddressForListVm
     {
         public int Id { get; set; }
         public string City { get; set; }

@@ -14,7 +14,7 @@ namespace CvManagementMVC.Domain.Model
         public string Nationality { get; set; }
         public int Age { get; set; }
         public bool isActive { get; set; }
-        public virtual Adress CandidateAdress { get; set; }
+        public virtual Address CandidateAddress { get; set; }
         public virtual CandidateContact CandidateContact { get; set; }
         public virtual Cv Cv { get; set; }
 

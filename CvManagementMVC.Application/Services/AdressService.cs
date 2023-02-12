@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CvManagementMVC.Application.Interfaces;
-using CvManagementMVC.Application.ViewModels.Adress;
+using CvManagementMVC.Application.ViewModels.Address;
 using CvManagementMVC.Domain.Interfaces;
 using CvManagementMVC.Domain.Model;
 using System;
@@ -11,34 +11,34 @@ using System.Threading.Tasks;
 
 namespace CvManagementMVC.Application.Services
 {
-    public class AdressService : ICandidateAdressService
+    public class AddressService : ICandidateAddressService
     {
-        private readonly ICandidateAdressRepository _adressRepository;
+        private readonly ICandidateAddressRepository _AddressRepository;
         private readonly IMapper _mapper;
-        public AdressService(ICandidateAdressRepository adressService, IMapper mapper)
+        public AddressService(ICandidateAddressRepository AddressService, IMapper mapper)
         {
-            _adressRepository = adressService;
+            _AddressRepository = AddressService;
             _mapper = mapper;
         }
 
-        public int AddAdress(NewAdressVm adress)
+        public int AddAddress(NewAddressVm Address)
         {
-            var candidateAdress=_mapper.Map<Adress>(adress);
-            var id= _adressRepository.AddCandidateAdress(candidateAdress);
+            var candidateAddress=_mapper.Map<Address>(Address);
+            var id= _AddressRepository.AddCandidateAddress(candidateAddress);
             return id;
         }
 
-        public NewAdressVm GetAdressForEdit(int id)
+        public NewAddressVm GetAddressForEdit(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveAdress(int candidateId)
+        public void RemoveAddress(int candidateId)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateAdress(NewAdressVm adress)
+        public void UpdateAddress(NewAddressVm Address)
         {
             throw new NotImplementedException();
         }

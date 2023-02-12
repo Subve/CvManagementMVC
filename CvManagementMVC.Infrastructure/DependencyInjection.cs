@@ -14,7 +14,7 @@ namespace CvManagementMVC.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
-            services.AddTransient<ICandidateAdressRepository, CandidateAdressRepository>();
+            services.AddTransient<ICandidateAddressRepository, CandidateAddressRepository>();
             services.AddTransient<ICandidateContactRepository, CandidateContactRepository>();
             services.AddTransient<ICandidateRepository, CandidateRepository>();
             services.AddTransient<ICvRepository, CvRepository>();

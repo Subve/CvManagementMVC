@@ -39,9 +39,9 @@
             <td>
                     @Html.ActionLink("Edit", "EditCandidate", new {  id=item.Id  }) |
                     @Html.ActionLink("Details", "ViewCandidate", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-                    <a href="@Url.Action("AddAdress", "Adress", new { id=item.Id })" class="btn btn-default">
-                        Add adress
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })|
+                    <a href="@Url.Action("AddAddress", "Address", new { candidateId=item.Id })" class="btn btn-default">
+                        Add address
                     </a>
         </tr>
 }

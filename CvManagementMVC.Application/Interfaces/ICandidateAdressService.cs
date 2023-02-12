@@ -1,4 +1,4 @@
-﻿using CvManagementMVC.Application.ViewModels.Adress;
+﻿using CvManagementMVC.Application.ViewModels.Address;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CvManagementMVC.Application.Interfaces
 {
-    public interface ICandidateAdressService
+    public interface ICandidateAddressService
     {
-        int AddAdress(NewAdressVm adress);
-        void RemoveAdress(int candidateId);
-        NewAdressVm GetAdressForEdit(int id);
-        void UpdateAdress(NewAdressVm adress);
+        int AddAddress(NewAddressVm Address);
+        void RemoveAddress(int candidateId);
+        NewAddressVm GetAddressForEdit(int id);
+        void UpdateAddress(NewAddressVm Address);
     }
 }

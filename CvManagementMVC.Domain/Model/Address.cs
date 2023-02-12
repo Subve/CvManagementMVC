@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CvManagementMVC.Domain.Model
 {
-    public class Adress
+    public class Address
     {
         public int Id { get; set; }
         public int CandidateId { get; set; }

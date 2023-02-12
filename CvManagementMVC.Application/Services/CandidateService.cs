@@ -61,15 +61,15 @@ namespace CvManagementMVC.Application.Services
             candidateVm.Nationality=candidate.Nationality;
             candidateVm.PhoneNumber = candidate.CandidateContact.PhoneNumber;
             candidateVm.Email = candidate.CandidateContact.Email;
-            var adress = new AdressForListVm()
+            var Address = new AddressForListVm()
             {
                 Id = candidate.Id,
-                City = candidate.CandidateAdress.City,
-                Country = candidate.CandidateAdress.Country,
-                PostalCode = candidate.CandidateAdress.PostalCode,
-                Region = candidate.CandidateAdress.Region
+                City = candidate.CandidateAddress.City,
+                Country = candidate.CandidateAddress.Country,
+                PostalCode = candidate.CandidateAddress.PostalCode,
+                Region = candidate.CandidateAddress.Region
             };
-            candidateVm.Adress= adress;*/
+            candidateVm.Address= Address;*/
             return candidateVm;
             
         }
