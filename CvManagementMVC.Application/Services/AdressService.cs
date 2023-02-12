@@ -2,6 +2,7 @@
 using CvManagementMVC.Application.Interfaces;
 using CvManagementMVC.Application.ViewModels.Adress;
 using CvManagementMVC.Domain.Interfaces;
+using CvManagementMVC.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,9 @@ namespace CvManagementMVC.Application.Services
 
         public int AddAdress(NewAdressVm adress)
         {
-            throw new NotImplementedException();
+            var candidateAdress=_mapper.Map<Adress>(adress);
+            var id= _adressRepository.AddCandidateAdress(candidateAdress);
+            return id;
         }
 
         public NewAdressVm GetAdressForEdit(int id)

@@ -26,7 +26,7 @@ namespace CvManagementMVC.Web.Controllers
         [HttpPost]
         public IActionResult AddAdress(NewAdressVm model)
         {
-            _adressService.AddAdress(model);
+            var id=_adressService.AddAdress(model);
            return View(model);
         }
     }
