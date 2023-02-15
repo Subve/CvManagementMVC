@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="AddCandidate">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -40,9 +40,8 @@
                     @Html.ActionLink("Edit", "EditCandidate", new {  id=item.Id  }) |
                     @Html.ActionLink("Details", "ViewCandidate", new { id=item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id=item.Id })|
-                    <a href="@Url.Action("AddAddress", "Address", new { candidateId=item.Id })" class="btn btn-default">
-                        Add address
-                    </a>
+                    @Html.ActionLink("Address","Details", "Address", new { candidateId=item.Id })
+                    
         </tr>
 }
     </tbody>

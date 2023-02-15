@@ -46,5 +46,22 @@ namespace CvManagementMVC.Infrastructure.Repositories
             var Addresses=_context.CandidateAddresses.Where(x => x.City == city);
             return Addresses;
         }
+
+        public Address GetCandidateAddressByCandidateId(int candidateId)
+        {
+            var address = _context.CandidateAddresses.FirstOrDefault<Address>(x => x.CandidateId == candidateId);
+            return address;
+        }
+
+        public void UpdateAddress(Address candidateAddress)
+        {
+            _context.Attach(candidateAddress);
+            _context.Entry(candidateAddress).Property("City").IsModified= true;
+            _context.Entry(candidateAddress).Property("Region").IsModified = true;
+            _context.Entry(candidateAddress).Property("PostalCode").IsModified = true;
+            _context.Entry(candidateAddress).Property("Country").IsModified = true;
+            _context.SaveChanges();
+
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace CvManagementMVC.Application.ViewModels.Address
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<NewAddressVm, Domain.Model.Address>();
+            profile.CreateMap<NewAddressVm, Domain.Model.Address>().ReverseMap();
         }
         
     }

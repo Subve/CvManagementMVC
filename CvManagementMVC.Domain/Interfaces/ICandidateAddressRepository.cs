@@ -19,8 +19,8 @@ namespace CvManagementMVC.Domain.Interfaces
 
          IQueryable<Address> GetAllAddressesByCountry(string country);
 
-
+        Address GetCandidateAddressByCandidateId(int candidateId);
          IQueryable<Address> GetAllAddressesByCity(string city);
-        
+        void UpdateAddress(Address candidateAddress);
     }
 }

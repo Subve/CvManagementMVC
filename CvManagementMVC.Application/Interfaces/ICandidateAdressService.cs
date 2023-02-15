@@ -10,8 +10,9 @@ namespace CvManagementMVC.Application.Interfaces
     public interface ICandidateAddressService
     {
         int AddAddress(NewAddressVm Address);
-        void RemoveAddress(int candidateId);
         NewAddressVm GetAddressForEdit(int id);
-        void UpdateAddress(NewAddressVm Address);
+        void RemoveAddress(int addressId);
+        NewAddressVm ShowAddress(int id);
+        void UpdateAddress(NewAddressVm address);
     }
 }
