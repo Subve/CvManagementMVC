@@ -12,9 +12,6 @@ namespace CvManagementMVC.Domain.Model
         public int CandidateId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-      /*  public int EducationHistoryId { get; set; }
-        public int EmploymentHistoryId { get; set; }
-        public int SkillId { get; set; }*/
         public virtual Candidate Candidate { get; set; }
         public virtual ICollection<Skill> Skill { get; set; }
         public virtual ICollection<EmploymentHistory> EmploymentHistory { get; set;}

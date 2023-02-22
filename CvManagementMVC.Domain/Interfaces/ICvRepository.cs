@@ -10,15 +10,15 @@ namespace CvManagementMVC.Domain.Interfaces
     public interface ICvRepository
     {
         int AddCv(Cv cv);
+        Cv GetCvByCandidateId(int candidateId);
+        Cv GetCvByCvId(int cvId);
+        void RemoveCv(int cvId);
+        void UpdateCv(Cv cv);
+
+        Cv GetCvByTitle(string title);
 
 
-         void RemoveCv(int cvId);
+        IQueryable<Cv> GetAllCvs();
 
-
-         Cv GetCvByTitle(string title);
-
-
-         IQueryable<Cv> GetAllCvs();
-        
     }
 }

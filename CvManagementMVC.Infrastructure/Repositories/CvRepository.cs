@@ -40,6 +40,24 @@ namespace CvManagementMVC.Infrastructure.Repositories
         {
             return _context.Cvs;
         }
+
+        public Cv GetCvByCandidateId(int candidateId)
+        {
+            var cv=_context.Cvs.Where(x=>x.CandidateId==candidateId).FirstOrDefault();
+            return cv;
+        }
+
+        public Cv GetCvByCvId(int cvId)
+        {
+            var cv=_context.Cvs.Where(x=>x.Id==cvId).FirstOrDefault();
+            return cv;
+        }
         
+        public void UpdateCv(Cv cv)
+        {
+            _context.Attach(cv);
+            _context.Entry(cv).Property("Title").IsModified = true;
+            _context.Entry(cv).Property("Content").IsModified = true;
+        }
     }
 }

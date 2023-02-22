@@ -19,6 +19,7 @@ namespace CvManagementMVC.Application
         {
             services.AddTransient<ICandidateService,CandidateService> ();
             services.AddTransient<ICandidateAddressService,AddressService> ();
+            services.AddTransient<ICvService, CvService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
