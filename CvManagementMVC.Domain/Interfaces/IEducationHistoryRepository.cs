@@ -10,10 +10,12 @@ namespace CvManagementMVC.Domain.Interfaces
     public interface IEducationHistoryRepository
     {
         int AddEducationHistory(EducationHistory educationHistory);
-         void RemoveEducationHistory(int educationHistoryId);
-         IQueryable<EducationHistory> GetEducationHistoryByCvId(int cvId);
-         IQueryable<EducationHistory> GetEducationHistoryByDegree(string degreeEarned);
-         IQueryable<EducationHistory> GetEducationHistoryBySchoolName(string schoolName);
-        
+        void RemoveEducationHistoryByEducationHistoryId(int educationHistoryId);
+        EducationHistory GetEducationHistoryByCvId(int cvId);
+        EducationHistory GetEducationHistoryById(int id);
+        IQueryable<EducationHistory> GetEducationHistoryByDegree(string degreeEarned);
+        IQueryable<EducationHistory> GetEducationHistoryBySchoolName(string schoolName);
+        void UpdateEducationHistory(EducationHistory educationHistory);
+
     }
 }

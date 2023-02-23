@@ -21,6 +21,7 @@ namespace CvManagementMVC.Application
             services.AddTransient<ICandidateAddressService, AddressService>();
             services.AddTransient<ICvService, CvService>();
             services.AddTransient<ICandidateContactService, CandidateContactService>();
+            services.AddTransient<IEducationHistoryRepository, EducationHistoryRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
