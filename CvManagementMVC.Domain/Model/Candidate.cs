@@ -19,7 +19,5 @@ namespace CvManagementMVC.Domain.Model
         public virtual Cv Cv { get; set; }
 
     }
-
-
     
 }

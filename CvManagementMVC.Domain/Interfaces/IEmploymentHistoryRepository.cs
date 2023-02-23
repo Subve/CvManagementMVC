@@ -10,17 +10,9 @@ namespace CvManagementMVC.Domain.Interfaces
     public interface IEmploymentHistoryRepository
     {
         int AddEmploymentHistory(EmploymentHistory employmentHistory);
-
-
          void RemoveEmploymentHistory(int employmentHistoryId);
-
-
          IQueryable<EmploymentHistory> GetEmploymentHistoryByCvId(int cvId);
-
-
          IQueryable<EmploymentHistory> GetEmploymentHistoryByTitle(string title);
-
-
          IQueryable<EmploymentHistory> GetEmploymentHistoryByCompany(string companyName);
         
     }

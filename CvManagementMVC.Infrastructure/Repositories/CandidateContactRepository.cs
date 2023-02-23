@@ -39,5 +39,13 @@ namespace CvManagementMVC.Infrastructure.Repositories
         {
             return _context.CandidateContacts;
         }
+
+        public void UpdateContact(CandidateContact candidateContact)
+        {
+            _context.Attach(candidateContact);
+            _context.Entry(candidateContact).Property("PhoneNumber").IsModified = true;
+            _context.Entry(candidateContact).Property("Email").IsModified = true;
+            _context.SaveChanges();
+        }
     }
 }

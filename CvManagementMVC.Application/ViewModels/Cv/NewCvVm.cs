@@ -19,8 +19,6 @@ namespace CvManagementMVC.Application.ViewModels.Cv
       /*  public virtual ICollection<Skill> Skill { get; set; }
         public virtual ICollection<EmploymentHistory> EmploymentHistory { get; set;}
         public virtual ICollection<EducationHistory> EducationHistory { get; set;}*/
-
-        
         public void Mapping(Profile profile)
         {
             profile.CreateMap<NewCvVm, CvManagementMVC.Domain.Model.Cv>().ReverseMap();

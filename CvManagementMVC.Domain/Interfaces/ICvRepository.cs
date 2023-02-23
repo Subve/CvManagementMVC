@@ -16,8 +16,6 @@ namespace CvManagementMVC.Domain.Interfaces
         void UpdateCv(Cv cv);
 
         Cv GetCvByTitle(string title);
-
-
         IQueryable<Cv> GetAllCvs();
 
     }

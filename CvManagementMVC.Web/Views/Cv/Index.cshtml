@@ -24,13 +24,14 @@
             <th>
                 Content
             </th>
-            
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.CvList) {
-        <tr>
-            
+        @foreach (var item in Model.CvList)
+        {
+            <tr>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Id)
                 </td>
@@ -43,12 +44,12 @@
                 <td>
                     @Html.DisplayFor(modelItem=>item.Content);
                 </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "ShowCv", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "DeleteCv", new { id=item.Id })
-            </td>
-        </tr>
-}
+                <td>
+                    @Html.ActionLink("Edit", "EditCv", new { id=item.Id }) |
+                    @Html.ActionLink("Details", "ShowCv", new { id=item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteCv", new { id=item.Id })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -43,8 +43,6 @@ namespace CvManagementMVC.Application.Services
                 Candidates = candidates,
                 Count = candidates.Count
             };
-
-
             
             return candidatesList;
         }

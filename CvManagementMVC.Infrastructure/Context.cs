@@ -39,8 +39,6 @@ namespace CvManagementMVC.Infrastructure
                 .HasOne<Skill>(a => a.Skill)
                 .WithMany(b => b.CvSkills)
                 .HasForeignKey(c => c.SkillId);
-                
-
             builder.Entity<Cv>()
                 .HasMany(a => a.EducationHistory).WithOne(b => b.Cv).HasForeignKey(c => c.CvId);
             builder.Entity<Cv>()

@@ -10,14 +10,8 @@ namespace CvManagementMVC.Domain.Interfaces
     public interface ISkillRepository
     {
         int AddSkill(Skill skill);
-
-
          void RemoveSkill(int skillId);
-
-
          Skill GetSkillById(int skillId);
-
-
          IQueryable<Skill> GetSkillsByName(string skillName);
         
     }

@@ -10,14 +10,8 @@ namespace CvManagementMVC.Domain.Interfaces
     public interface ICandidateRepository
     {
         int AddCandidate(Candidate candidate);
-
-
          void DeleteCandidate(int candidateId);
-            
-
          Candidate GetCandidate(int candidateId);
-
-
          IQueryable<Candidate> GetAllCandidates();
          IQueryable<Candidate> GetAllActiveCandidates();
         void UpdateCandidate(Candidate candidate);
