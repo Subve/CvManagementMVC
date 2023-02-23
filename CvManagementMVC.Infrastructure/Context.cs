@@ -18,6 +18,7 @@ namespace CvManagementMVC.Infrastructure
         public DbSet<EducationHistory> EducationHistories { get; set; }
         public DbSet<EmploymentHistory> EmploymentHistories { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet<CvSkill> CvSkills { get; set; }
 
         public Context(DbContextOptions options) : base(options)
         {
@@ -27,8 +28,19 @@ namespace CvManagementMVC.Infrastructure
             base.OnModelCreating(builder);
             builder.Entity<Cv>()
                 .HasOne(a => a.Candidate).WithOne(b => b.Cv).HasForeignKey<Cv>(c => c.CandidateId);
-            builder.Entity<Cv>()
-                .HasMany(a => a.Skill).WithOne(b => b.Cv).HasForeignKey(c => c.CvId);
+
+            builder.Entity<CvSkill>()
+                .HasKey(it => new { it.CvId, it.SkillId });
+            builder.Entity<CvSkill>()
+                .HasOne<Cv>(a=>a.Cv)
+                .WithMany(b => b.CvSkills)
+                .HasForeignKey(c => c.CvId);
+            builder.Entity<CvSkill>()
+                .HasOne<Skill>(a => a.Skill)
+                .WithMany(b => b.CvSkills)
+                .HasForeignKey(c => c.SkillId);
+                
+
             builder.Entity<Cv>()
                 .HasMany(a => a.EducationHistory).WithOne(b => b.Cv).HasForeignKey(c => c.CvId);
             builder.Entity<Cv>()
@@ -36,7 +48,7 @@ namespace CvManagementMVC.Infrastructure
             builder.Entity<CandidateContact>()
                 .HasOne(a => a.Candidate).WithOne(b => b.CandidateContact).HasForeignKey<CandidateContact>(c => c.CandidateId);
             builder.Entity<Address>()
-                .HasOne(a => a.Candidate).WithOne(b => b.CandidateAddress).HasForeignKey<Address>(c => c.CandidateId);
+                .HasOne(a => a.Candidate).WithOne(b => b.Address).HasForeignKey<Address>(c => c.CandidateId);
 
         }
     }

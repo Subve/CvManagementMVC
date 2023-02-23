@@ -16,16 +16,17 @@ namespace CvManagementMVC.Application.ViewModels.Cv
         public int CandidateId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public virtual ICollection<Skill> Skill { get; set; }
+      /*  public virtual ICollection<Skill> Skill { get; set; }
         public virtual ICollection<EmploymentHistory> EmploymentHistory { get; set;}
-        public virtual ICollection<EducationHistory> EducationHistory { get; set;}
+        public virtual ICollection<EducationHistory> EducationHistory { get; set;}*/
+
         
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<NewCvVm, CvManagementMVC.Domain.Model.Cv>().ReverseMap()
-                .ForMember(s => s.Skill, opt => opt.Ignore())
+            profile.CreateMap<NewCvVm, CvManagementMVC.Domain.Model.Cv>().ReverseMap();
+                /*.ForMember(s => s.Skill, opt => opt.Ignore())
                 .ForMember(s => s.EducationHistory, opt => opt.Ignore())
-                .ForMember(s => s.EmploymentHistory, opt => opt.Ignore());
+                .ForMember(s => s.EmploymentHistory, opt => opt.Ignore());*/
         }
     }
 }
