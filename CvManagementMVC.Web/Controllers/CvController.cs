@@ -57,16 +57,16 @@ namespace CvManagementMVC.Web.Controllers
         [HttpGet]
         public IActionResult EditCv(int id)
         {
-            var model=_cvService.GetCvForDetails(id);
+            var model = _cvService.GetCvForDetails(id);
             return View(model);
         }
         [HttpPost]
         public IActionResult EditCv(NewCvVm model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _cvService.UpdateCv(model);
-                return RedirectToAction("ShowCv",new {id = model.Id });
+                return RedirectToAction("ShowCv", new { id = model.Id });
             }
             return View(model);
         }
