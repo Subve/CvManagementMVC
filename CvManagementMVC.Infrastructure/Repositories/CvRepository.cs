@@ -58,6 +58,7 @@ namespace CvManagementMVC.Infrastructure.Repositories
             _context.Attach(cv);
             _context.Entry(cv).Property("Title").IsModified = true;
             _context.Entry(cv).Property("Content").IsModified = true;
+            _context.SaveChanges();
         }
     }
 }
