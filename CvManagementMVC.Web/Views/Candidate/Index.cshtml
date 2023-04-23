@@ -41,7 +41,7 @@
                     @Html.ActionLink("Details", "ViewCandidate", new { id=item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id=item.Id }) |
                     @Html.ActionLink("Address","Details", "Address", new { candidateId=item.Id }) |
-                    @Html.ActionLink("Cv","CreateCv","Cv",new {candidateId=item.Id})
+                    @Html.ActionLink("Cv","ShowCv","Cv",new {candidateId=item.Id})
                     
         </tr>
 }

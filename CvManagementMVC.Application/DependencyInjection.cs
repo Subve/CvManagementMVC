@@ -4,6 +4,7 @@ using CvManagementMVC.Application.Services;
 using CvManagementMVC.Domain.Interfaces;
 using CvManagementMVC.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
+using SkillManagementMVC.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace CvManagementMVC.Application
             services.AddTransient<ICandidateService, CandidateService>();
             services.AddTransient<ICandidateAddressService, AddressService>();
             services.AddTransient<ICvService, CvService>();
+            services.AddTransient<ISkillService, SkillService>();
             services.AddTransient<ICandidateContactService, CandidateContactService>();
             services.AddTransient<IEducationHistoryRepository, EducationHistoryRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());

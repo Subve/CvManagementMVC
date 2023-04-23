@@ -2,8 +2,10 @@
 using AutoMapper.QueryableExtensions;
 using CvManagementMVC.Application.Interfaces;
 using CvManagementMVC.Application.ViewModels.Cv;
+using CvManagementMVC.Application.ViewModels.Skill;
 using CvManagementMVC.Domain.Interfaces;
 using CvManagementMVC.Domain.Model;
+using SkillManagementMVC.Application.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +16,9 @@ using System.Threading.Tasks;
 namespace CvManagementMVC.Application.Services
 {
     public class CvService : ICvService
+
     {
+
         private readonly ICvRepository _cvRepository;
         private readonly IMapper _mapper;
         public CvService(ICvRepository cvRepository, IMapper mapper)
@@ -46,10 +50,11 @@ namespace CvManagementMVC.Application.Services
             return cvsList;
         }
 
+
         public NewCvVm GetCvForDetails(int id)
         {
-            var cv=_cvRepository.GetCvByCvId(id);
-            var cvModel=_mapper.Map<NewCvVm>(cv);
+            var cv = _cvRepository.GetCvByCvId(id);
+            var cvModel = _mapper.Map<NewCvVm>(cv);
             return cvModel;
         }
 
@@ -60,11 +65,14 @@ namespace CvManagementMVC.Application.Services
             return cvModel;
         }
 
+
+
         public void UpdateCv(NewCvVm newCv)
         {
             var newCvModel = _mapper.Map<Cv>(newCv);
             _cvRepository.UpdateCv(newCvModel);
 
         }
+
     }
 }

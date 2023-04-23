@@ -40,5 +40,10 @@ namespace CvManagementMVC.Infrastructure.Repositories
             var skills=_context.Skills.Where(x=>x.SkillName==skillName);
             return skills;
         }
+
+        public IQueryable<Skill> GetAllSkills()
+        {
+            return _context.Skills;
+        }
     }
 }

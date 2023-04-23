@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace CvManagementMVC.Domain.Model
 {
     public class CvSkill
-    {
+    {   
+        public int Id { get; set; }
         public int CvId { get; set; }
         public virtual Cv Cv { get; set; }
         public int SkillId { get; set; }

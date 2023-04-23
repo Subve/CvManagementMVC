@@ -13,6 +13,9 @@ namespace CvManagementMVC.Domain.Interfaces
          void RemoveSkill(int skillId);
          Skill GetSkillById(int skillId);
          IQueryable<Skill> GetSkillsByName(string skillName);
-        
+        IQueryable<Skill> GetAllSkills();
+
+
+
     }
 }
