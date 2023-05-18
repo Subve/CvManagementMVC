@@ -31,17 +31,6 @@ namespace CvManagementMVC.Infrastructure.Repositories
             return cvSkill.Id;
         }
 
-        public void RemoveCvSkill(int cvId, int skillId)
-        {
-            var cvSkill = _context.CvSkills.FirstOrDefault(cs => cs.CvId == cvId && cs.SkillId == skillId);
-
-            if (cvSkill != null)
-            {
-                _context.CvSkills.Remove(cvSkill);
-                _context.SaveChanges();
-            }
-        }
-
 
         public void RemoveCvSkill(int cvSkillId)
         {
@@ -64,6 +53,11 @@ namespace CvManagementMVC.Infrastructure.Repositories
         public IQueryable<CvSkill> GetAllCvSkills()
         {
             return _context.CvSkills;
+        }
+
+        public IQueryable<CvSkill> GetCvSkillsByCvId()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -24,6 +24,7 @@ namespace CvManagementMVC.Application
             services.AddTransient<ISkillService, SkillService>();
             services.AddTransient<ICandidateContactService, CandidateContactService>();
             services.AddTransient<IEducationHistoryRepository, EducationHistoryRepository>();
+            services.AddTransient<ICvSkillService, CvSkillService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }

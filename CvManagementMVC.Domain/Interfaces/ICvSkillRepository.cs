@@ -12,8 +12,8 @@ namespace CvManagementMVC.Domain.Interfaces
         int AddCvSkill(CvSkill cvSkill);
 
         void RemoveCvSkill(int cvSkillId);
-        void RemoveCvSkill(int cvId, int skillId);
         void UpdateCvSkill(CvSkill cvSkill);
+        IQueryable<CvSkill> GetCvSkillsByCvId();
         IQueryable<CvSkill> GetAllCvSkills();
 
     }
