@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace CvManagementMVC.Infrastructure
 {
@@ -21,6 +22,7 @@ namespace CvManagementMVC.Infrastructure
             services.AddTransient<IEducationHistoryRepository, EducationHistoryRepository>();
             services.AddTransient<IEmploymentHistoryRepository, EmploymentHistoryRepository>();
             services.AddTransient<ISkillRepository, SkillRepository>();
+            services.AddTransient<ICvSkillRepository, CvSkillRepository>();
             
             return services;
         }
